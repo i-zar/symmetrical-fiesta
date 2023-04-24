@@ -1,0 +1,28 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+      nodejs: 14
+    commands:
+      - echo "Installing frontend dependencies..."
+      - cd game-results-app && npm ci
+      - echo "Installing backend dependencies..."
+      - cd ../flask-backend && pip install -r requirements.txt
+  pre_build:
+    commands:
+      - echo "Building frontend..."
+      - cd ../game-results-app && npm run build
+  build:
+    commands:
+      - echo "Zipping backend..."
+      - cd ../flask-backend && zip -r ../build-output/backend.zip .
+  post_build:
+    commands:
+      - echo "Copying frontend build to output folder..."
+      - cp -R ../game-results-app/build ../build-output/frontend
+artifacts:
+  files:
+    - build-output/**/*
+  discard-paths: yes
