@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Installing dependencies..."
+      - cd game-results-api
       - pip install -r requirements.txt
 
   pre_build:
@@ -12,6 +12,9 @@ phases:
 
   build:
     commands:
+      - cd ../game-results-app
+      - npm ci
+      - npm run build
       - echo "Building Flask application (if any)..."
 
   post_build:
