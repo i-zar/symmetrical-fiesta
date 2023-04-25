@@ -1,0 +1,5 @@
+branch-defaults:
+  main:
+    environment: game-results-environment
+global:
+  profile: null
