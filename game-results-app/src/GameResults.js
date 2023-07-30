@@ -1,11 +1,6 @@
-import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import api from './api';
-
-const instance = axios.create({
-  baseURL: 'http://game-results-app-env.eba-suvm3xvy.eu-central-1.elasticbeanstalk.com/api',
-});
 
 const GameResults = () => {
     const [data, setData] = useState([]);
