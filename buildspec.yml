@@ -25,3 +25,5 @@ artifacts:
   files:
     - '**/*'
   discard-paths: yes
+
+web: python game-results-api/app.py
