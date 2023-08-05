@@ -25,3 +25,7 @@ artifacts:
   files:
     - '**/*'
   discard-paths: yes
+
+  eb_codebuild_settings:
+    CodeBuildServiceRole: AWSCodePipelineServiceRole-eu-central-1-game-results-pipeline
+    ComputeType: BUILD_GENERAL1_SMALL
