@@ -1,2 +1,2 @@
 web: gunicorn app:app
-web: python game-results-api/app.py
+web: python app.py
